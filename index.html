@@ -8,40 +8,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="flex h-screen relative overflow-hidden">
-        <header class="w-[250px] bg-pink-600 p-4">
-            <h1 class="text-[22px] text-white text-center font-bold">Dani Brownies CRM</h1>
-            <nav class="flex flex-col gap-3 mt-4 *:leading-[40px] *:rounded *:pl-4 *:text-white *:duration-200">
-                <a href="" class=" hover:bg-white hover:text-pink-600">Dashboard</a>
-                <a href=""
-                    class=" hover:bg-white hover:text-pink-600 active [&.active]:bg-white [&.active]:text-pink-600">Clientes</a>
-                <a href="" class=" hover:bg-white hover:text-pink-600">Produtos</a>
-            </nav>
-        </header>
-        <div class="flex-1 p-16">
-            <h2 class="flex justify-between items-center text-[26px] text-pink-600 font-semibold">
-                Clientes
-                <button onclick="mostrarOverlay()"
-                    class="bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200">Novo
-                    Cliente</button>
-            </h2>
+<body></body>
+<div class="flex h-screen relative overflow-hidden">
+    <header class="w-[250px] bg-pink-600 p-4">
+        <h1 class="text-[22px] text-white text-center font-bold">Dani Brownies CRM</h1>
+        <nav class="flex flex-col gap-3 mt-4 *:leading-[40px] *:rounded *:pl-4 *:text-white *:duration-200">
+            <a href="" class="hover:bg-white hover:text-pink-600">Dashboard</a>
+            <a href=""
+                class="hover:bg-white hover:text-pink-600 active [&.active]:bg-white [&.active]:text-pink-600">Clientes</a>
+            <a href="" class="hover:bg-white hover:text-pink-600">Produtos</a>
+        </nav>
+    </header>
+    <div class="flex-1 p-16">
+        <h2 class="flex justify-between items-center text-[26px] text-pink-600 font-semibold">
+            Clientes
+            <button onclick="mostrarOverlay()"
+                class="bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200">Novo
+                cliente</button>
+        </h2>
+
+        <table class="w-full mt-4 rounded overflow-hidden">
+            <thead class="bg-pink-600 text-white *:leading-[40px] ">
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Última compra</th>
+                <th>Ações</th>
+            </thead>
+            <tbody id="tabela" class="[&>*:nth-child(even)]:bg-black/5">
+                <tr class="*:leading-[-40px]">
+                    <td>Conrado</td>
+                    <td>conrado@gmail.com</td>
+                    <td>(00) 00000 0000</td>
+                    <td>05/05/2025</td>
+
+                    <td class="w-[100px] flex justify-center gap-4">
+                        <box-icon name="pencil"></box-icon>
+                        <box-icon name="trash"></box-icon>
+                    </td>
+                </tr>
 
 
-            <div onclick="mostrarOverlay()" class="w-full h-full bg-black/70 absolute top-0 left-0 duration-200 opacity-0 invisible"></div>
-        </div>
+                <tr class="*:leading-[-40px]">
+                    <td>Conrado</td>
+                    <td>conrado@gmail.com</td>
+                    <td>(00) 00000 0000</td>
+                    <td>05/05/2025</td>
+
+                    <td class="w-[100px] flex justify-center gap-4">
+                        <box-icon name="pencil"></box-icon>
+                        <box-icon name="trash"></box-icon>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <div onclick="mostrarOverlay()" id="overlay"
+            class="w-full h-full bg-black/70 absolute top-0 left-0 duration-200 opacity-0 invisible"></div>
 
         <div id="gaveta" class="min-w-[350px] h-full bg-white p-4 absolute top-0 -right-full duration-200">
             <h3 class="flex justify-between items-center">
-                Cadastro 
-                <box-icon name='x' class="w-[40px] h-[40px] rounded-full bg-pink-600 fill-white p-2 cursor-pointer hover:bg-pink-700 duration-200"></box-icon>
+                Cadastro
+                <box-icon onclick="mostrarOverlay()" name='x'
+                    class="w-[40px] h-[40px] rounded-full bg-pink-600 fill-white p-2 cursor-pointer hover:bg-pink-700 duration-200"></box-icon>
             </h3>
         </div>
-
     </div>
+</div>
 
-    <script src="index.js"></script>
-
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="index.js"></script>
 </body>
 
 </html>
