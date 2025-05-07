@@ -11,5 +11,4 @@ function mostrarOverlay(){
         gavetaElement.classList.add("-right-full");
         gavetaElement.classList.remove("right-0");
     }
-    
 }
